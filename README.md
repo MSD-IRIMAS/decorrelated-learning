@@ -13,7 +13,7 @@ The framework has been evaluated on the **UCR Time Series Archive** datasets, de
 
 ## Repository Structure
 
-\`\`\`
+```
 .
 ├── base.py              # Base model training script
 ├── cotrain.py           # Decorrelated training with 1 reference model
@@ -23,16 +23,16 @@ The framework has been evaluated on the **UCR Time Series Archive** datasets, de
 ├── cotrain_5.py         # Decorrelated training with 4 reference models (variant)
 ├── lite.py              # LITE model definition
 ├── utils.py             # Data loading, preprocessing, and utilities
-\`\`\`
+```
 
 ## Installation
 
 1. **Clone this repository**
 
-   \`\`\`bash
+   ```bash
    git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
    cd YOUR_REPO_NAME
-   \`\`\`
+   ```
 
 2. **Install dependencies**
 
@@ -46,36 +46,36 @@ The framework has been evaluated on the **UCR Time Series Archive** datasets, de
 
    You can install them via pip:
 
-   \`\`\`bash
+   ```bash
    pip install torch numpy pandas scikit-learn matplotlib
-   \`\`\`
+   ```
 
 ## Usage
 
 All training scripts support command-line arguments:
 
-- \`--classifier\`: Currently supports only \`LITE\`
-- \`--datasets\`: Name of the dataset (or multiple datasets) from the UCR archive
-- \`--runs\`: Number of runs to perform
-- \`--output-directory\`: Where to store results
+- `--classifier`: Currently supports only \`LITE\`
+- `--datasets`: Name of the dataset (or multiple datasets) from the UCR archive
+- `--runs`: Number of runs to perform
+- `--output-directory`: Where to store results
 
 Example to train a single LITE model (baseline):
 
-\`\`\`bash
+```bash
 python base.py --datasets ECGFiveDays --runs 1 --output-directory results/base/
-\`\`\`
+```
 
 Example to train a decorrelated ensemble with one reference model:
 
-\`\`\`bash
+```bash
 python cotrain.py --datasets ECGFiveDays --runs 1 --output-directory results/ensemble_1/
-\`\`\`
+```
 
 Example to train a decorrelated ensemble with two reference models:
 
-\`\`\`bash
+```bash
 python cotrain_2.py --datasets ECGFiveDays --runs 1 --output-directory results/ensemble_2/
-\`\`\`
+```
 
 ...and so on up to \`cotrain_5.py\`.
 
