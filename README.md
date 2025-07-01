@@ -96,14 +96,14 @@ See the paper for detailed quantitative and qualitative analysis:
 
 If you use this code, please cite:
 
-\`\`\`
+```
 @inproceedings{abdullayev2025diversity,
   title={Enhancing Time Series Classification with Diversity-Driven Neural Network Ensembles},
   author={Abdullayev, Javidan and Devanne, Maxime and Meyer, Cyril and Ismail-Fawaz, Ali and Weber, Jonathan and Forestier, Germain},
   booktitle={Proceedings of the International Joint Conference on Neural Networks (IJCNN)},
   year={2025}
 }
-\`\`\`
+```
 
 ## License
 
