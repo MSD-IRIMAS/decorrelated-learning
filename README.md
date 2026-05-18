@@ -225,12 +225,13 @@ checks against Python 3.9 / 3.10 / 3.11 / 3.12.
 If you use this code, please cite:
 
 ```bibtex
-@inproceedings{abdullayev2025diversity,
-  title     = {Enhancing Time Series Classification with Diversity-Driven Neural Network Ensembles},
-  author    = {Abdullayev, Javidan and Devanne, Maxime and Meyer, Cyril and
-               Ismail-Fawaz, Ali and Weber, Jonathan and Forestier, Germain},
-  booktitle = {Proceedings of the International Joint Conference on Neural Networks (IJCNN)},
-  year      = {2025}
+@inproceedings{abdullayev2025enhancing,
+  title={Enhancing Time Series Classification with Diversity-Driven Neural Network Ensembles},
+  author={Abdullayev, Javidan and Devanne, Maxime and Meyer, Cyril and Ismail-Fawaz, Ali and Weber, Jonathan and Forestier, Germain},
+  booktitle={2025 International Joint Conference on Neural Networks (IJCNN)},
+  pages={1--10},
+  year={2025},
+  organization={IEEE}
 }
 ```
 
