@@ -1,0 +1,35 @@
+# Example configuration for reproducing the paper.
+#
+# This file is for reference only. The CLI reads command-line arguments;
+# you can pass these values via flags, e.g.:
+#
+#   diversity-tsc train --epochs 1500 --lr 1e-3 --ce-weight 0.8 ...
+
+paper_defaults:
+  epochs: 1500
+  batch_size: 64
+  learning_rate: 1.0e-3
+  min_learning_rate: 1.0e-4
+  scheduler:
+    type: ReduceLROnPlateau
+    factor: 0.5
+    patience: 50
+  loss_weights:
+    cross_entropy: 0.8
+    diversity: 0.2
+  diversity_penalty:
+    scale: 40
+  model:
+    n_filters: 32
+    kernel_size: 41
+    use_custom_filters: true
+    use_dilation: true
+    use_multiplexing: true
+
+# Recommended seeds (one per ensemble member) used in the paper.
+ensemble_seeds:
+  - 37
+  - 5639
+  - 8976
+  - 8859
+  - 9876

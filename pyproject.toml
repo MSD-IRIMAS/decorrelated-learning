@@ -1,0 +1,99 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "diversity-tsc"
+description = "Diversity-driven ensemble learning for time series classification."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors = [
+    { name = "Javidan Abdullayev" },
+    { name = "Maxime Devanne" },
+    { name = "Cyril Meyer" },
+    { name = "Ali Ismail-Fawaz" },
+    { name = "Jonathan Weber" },
+    { name = "Germain Forestier" },
+]
+keywords = [
+    "time series classification",
+    "ensemble learning",
+    "feature decorrelation",
+    "deep learning",
+    "pytorch",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dynamic = ["version"]
+dependencies = [
+    "torch>=2.0",
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "scikit-learn>=1.1",
+    "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-cov>=4",
+    "ruff>=0.5",
+    "mypy>=1.5",
+    "pre-commit>=3.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/javidan-abdullayev/diversity-tsc"
+Issues = "https://github.com/javidan-abdullayev/diversity-tsc/issues"
+
+[project.scripts]
+diversity-tsc = "diversity_tsc.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = { attr = "diversity_tsc._version.__version__" }
+
+# -----------------------------------------------------------------------------
+# Tooling configuration
+# -----------------------------------------------------------------------------
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "N", "SIM"]
+ignore = [
+    "N803", "N806",     # allow math-style variable names like xtrain, X
+    "UP006", "UP007",   # keep typing.List/Optional for 3.9 compatibility
+    "UP035", "UP045",   # `from typing import` still preferred under py3.9
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.9"
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
