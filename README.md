@@ -243,4 +243,4 @@ Released under the [MIT License](LICENSE).
 
 This work was conducted at Université de Haute-Alsace and supported by the
 IRIMAS laboratory. The LITE architecture is adapted from
-[MSD-Mix-LITE/LITE](https://github.com/MSD-Mvpcom/LITE) by Ismail-Fawaz et al.
+[com/MSD-IRIMAS/LITE](https://github.com/MSD-IRIMAS/LITE) by Ismail-Fawaz et al.
